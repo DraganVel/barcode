@@ -34,9 +34,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 
-        var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-
-        scanner.scan( function (result) {
+        cordova.plugins.barcodeScanner.scan(
+            function (result) {
                 alert("We got a barcode\n" +
                     "Result: " + result.text + "\n" +
                     "Format: " + result.format + "\n" +
